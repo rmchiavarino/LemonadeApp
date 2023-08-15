@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         lemonImage = findViewById(R.id.image_lemon_state)
         setViewElements()
         lemonImage!!.setOnClickListener {
-            // TODO: call the method that handles the state when the image is clicked
+            clickLemonImage()
         }
         lemonImage!!.setOnLongClickListener {
             // TODO: replace 'false' with a call to the function that shows the squeeze count
@@ -91,10 +91,7 @@ class MainActivity : AppCompatActivity() {
      * This method determines the state and proceeds with the correct action.
      */
     private fun clickLemonImage() {
-        // TODO: use a conditional statement like 'if' or 'when' to track the lemonadeState
-        //  when the image is clicked we may need to change state to the next step in the
-        //  lemonade making progression (or at least make some changes to the current state in the
-        //  case of squeezing the lemon). That should be done in this conditional statement
+        setViewElements()
 
         // TODO: When the image is clicked in the SELECT state, the state should become SQUEEZE
         //  - The lemonSize variable needs to be set using the 'pick()' method in the LemonTree class
@@ -118,6 +115,26 @@ class MainActivity : AppCompatActivity() {
      */
     private fun setViewElements() {
         val textAction: TextView = findViewById(R.id.text_action)
+        val imageState: ImageView = findViewById(R.id.image_lemon_state)
+
+        val textResource = when(lemonadeState){
+            SELECT->R.string.lemon_select
+            SQUEEZE->R.string.lemon_squeeze
+            DRINK->R.string.lemon_drink
+            RESTART->R.string.lemon_empty_glass
+            else->R.string.lemon_select
+        }
+        textAction.setText(textResource)
+
+        val drawableResource = when(lemonadeState){
+            SELECT->R.drawable.lemon_tree
+            SQUEEZE->R.drawable.lemon_squeeze
+            DRINK->R.drawable.lemon_drink
+            RESTART->R.drawable.lemon_restart
+            else->R.drawable.lemon_tree
+        }
+        imageState.setImageResource(drawableResource)
+
         // TODO: set up a conditional that tracks the lemonadeState
 
         // TODO: for each state, the textAction TextView should be set to the corresponding string from

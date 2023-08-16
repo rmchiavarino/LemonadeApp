@@ -92,6 +92,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun clickLemonImage() {
         setViewElements()
+        if ()
 
         // TODO: When the image is clicked in the SELECT state, the state should become SQUEEZE
         //  - The lemonSize variable needs to be set using the 'pick()' method in the LemonTree class

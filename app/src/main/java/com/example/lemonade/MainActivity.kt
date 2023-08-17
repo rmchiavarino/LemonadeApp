@@ -91,8 +91,30 @@ class MainActivity : AppCompatActivity() {
      * This method determines the state and proceeds with the correct action.
      */
     private fun clickLemonImage() {
+        //setViewElements()
+        if (lemonadeState==SELECT){
+          lemonSize=lemonTree.pick()
+          squeezeCount=0
+          lemonadeState=SQUEEZE
+        }
+        else if (lemonadeState==SQUEEZE){
+            squeezeCount = (squeezeCount+1)
+            lemonSize = (lemonSize-1)
+
+            if(lemonSize==0){
+                lemonadeState=DRINK
+                lemonSize=(-1)
+            }
+
+        }
+        else if(lemonadeState==DRINK){
+            lemonadeState=RESTART
+        }
+        else{
+            lemonadeState=SELECT
+        }
+
         setViewElements()
-        if ()
 
         // TODO: When the image is clicked in the SELECT state, the state should become SQUEEZE
         //  - The lemonSize variable needs to be set using the 'pick()' method in the LemonTree class

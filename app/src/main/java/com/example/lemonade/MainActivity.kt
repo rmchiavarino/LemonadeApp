@@ -67,10 +67,10 @@ class MainActivity : AppCompatActivity() {
         setViewElements()
         lemonImage!!.setOnClickListener {
             clickLemonImage()
-            // TODO: call the method that handles the state when the image is clicked
+            // DONE: call the method that handles the state when the image is clicked
         }
         lemonImage!!.setOnLongClickListener {
-            // TODO: replace 'false' with a call to the function that shows the squeeze count
+            // DONE: replace 'false' with a call to the function that shows the squeeze count
             showSnackbar()
         }
     }
@@ -117,20 +117,20 @@ class MainActivity : AppCompatActivity() {
 
         setViewElements()
 
-        // TODO: When the image is clicked in the SELECT state, the state should become SQUEEZE
+        // DONE: When the image is clicked in the SELECT state, the state should become SQUEEZE
         //  - The lemonSize variable needs to be set using the 'pick()' method in the LemonTree class
         //  - The squeezeCount should be 0 since we haven't squeezed any lemons just yet.
 
-        // TODO: When the image is clicked in the SQUEEZE state the squeezeCount needs to be
+        // DONE: When the image is clicked in the SQUEEZE state the squeezeCount needs to be
         //  INCREASED by 1 and lemonSize needs to be DECREASED by 1.
         //  - If the lemonSize has reached 0, it has been juiced and the state should become DRINK
         //  - Additionally, lemonSize is no longer relevant and should be set to -1
 
-        // TODO: When the image is clicked in the DRINK state the state should become RESTART
+        // DONE: When the image is clicked in the DRINK state the state should become RESTART
 
-        // TODO: When the image is clicked in the RESTART state the state should become SELECT
+        // DONE: When the image is clicked in the RESTART state the state should become SELECT
 
-        // TODO: lastly, before the function terminates we need to set the view elements so that the
+        // DONE: lastly, before the function terminates we need to set the view elements so that the
         //  UI can reflect the correct state
     }
 
@@ -159,12 +159,12 @@ class MainActivity : AppCompatActivity() {
         }
         imageState.setImageResource(drawableResource)
 
-        // TODO: set up a conditional that tracks the lemonadeState
+        // DONE: set up a conditional that tracks the lemonadeState
 
-        // TODO: for each state, the textAction TextView should be set to the corresponding string from
+        // DONE: for each state, the textAction TextView should be set to the corresponding string from
         //  the string resources file. The strings are named to match the state
 
-        // TODO: Additionally, for each state, the lemonImage should be set to the corresponding
+        // DONE: Additionally, for each state, the lemonImage should be set to the corresponding
         //  drawable from the drawable resources. The drawables have the same names as the strings
         //  but remember that they are drawables, not strings.
     }
